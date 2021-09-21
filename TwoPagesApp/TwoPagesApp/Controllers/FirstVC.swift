@@ -15,6 +15,7 @@ class FirstVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        button.layer.cornerRadius = 5
        
         // Do any additional setup after loading the view.
     }
@@ -33,7 +34,7 @@ class FirstVC: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! SecondCollectionVC
+        let destination = segue.destination as! SecondVC
         destination.searchFromFirstVC = searchTF.text
     }
 

@@ -20,7 +20,7 @@ class SecondCollectionVC: UICollectionViewController {
         networkDataFetcher.getImages(searchTerm: searchFromFirstVC!) {[weak self](searchRasults) in
             guard let featchedPhotos = searchRasults else { return }
             self?.photos = featchedPhotos.results
-            self?.collectionView.reloadData()
+           
         }
             
             

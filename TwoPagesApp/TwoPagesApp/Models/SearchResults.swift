@@ -14,14 +14,13 @@ struct SearchResults: Decodable {
 struct UnsplashPhoto: Decodable {
     let width: Int
     let height: Int
-    let urls: [URLKing.RawValue:String]
-    
-    enum URLKing: String {
-        case raw
-        case full
-        case regular
-        case small
-        case thumb
-        
+    let urls: [URLKing.RawValue : String]
+
     }
+enum URLKing: String {
+    case raw
+    case full
+    case regular
+    case small
+    case thumb
 }

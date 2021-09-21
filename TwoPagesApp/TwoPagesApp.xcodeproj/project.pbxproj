@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A74FA3D26F92CE1001DC033 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74FA3C26F92CE1001DC033 /* SecondVC.swift */; };
+		0A74FA3F26F93038001DC033 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74FA3E26F93038001DC033 /* ImageCollectionViewCell.swift */; };
 		0AAF2E2926F78A4600DA495B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF2E2826F78A4600DA495B /* AppDelegate.swift */; };
 		0AAF2E2B26F78A4600DA495B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF2E2A26F78A4600DA495B /* SceneDelegate.swift */; };
 		0AAF2E3026F78A4600DA495B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF2E2E26F78A4600DA495B /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A74FA3C26F92CE1001DC033 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		0A74FA3E26F93038001DC033 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0AAF2E2526F78A4600DA495B /* TwoPagesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoPagesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAF2E2826F78A4600DA495B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AAF2E2A26F78A4600DA495B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 			children = (
 				0AAF2E3C26F7944300DA495B /* SecondCollectionVC.swift */,
 				0AAF2E3E26F794B000DA495B /* FirstVC.swift */,
+				0A74FA3C26F92CE1001DC033 /* SecondVC.swift */,
+				0A74FA3E26F93038001DC033 /* ImageCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				0AAF2E3F26F794B000DA495B /* FirstVC.swift in Sources */,
 				0AAF2E4926F7D46500DA495B /* SearchResults.swift in Sources */,
 				0AAF2E2926F78A4600DA495B /* AppDelegate.swift in Sources */,
+				0A74FA3F26F93038001DC033 /* ImageCollectionViewCell.swift in Sources */,
+				0A74FA3D26F92CE1001DC033 /* SecondVC.swift in Sources */,
 				0AAF2E2B26F78A4600DA495B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
