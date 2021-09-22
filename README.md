@@ -1,6 +1,6 @@
 # TwoPagesApp
 
-<img src="https://github.com/UladzimirKulakou/OnePageApp/blob/main/TwoPagesApp.gif">
+<img src="https://github.com/UladzimirKulakou/TwoPagesApp/blob/main/TwoPagesApp.gif">
 
 
 
