@@ -10,12 +10,8 @@ Clone repository to your Mac
 
 # Description
 
-Two pages application based on UICollectionView with a list of images.  
-●    It works like SpringBoard 7x10 items (add 2 pt between images) on iPhone with horizontal pagination.  
-●    The top bar contain two buttons: “+” and “Reload All”.  
-●    On “+” button add a new image to the end of the list.  
-●    “Reload All” function remove all existing images and load 140 new.   
-●    Images are rounded with corner radius = 7.  
+Two pages application based on UICollectionView  with a list of images.  
+●    On the first screan based input text field and the button "Next". Push this button, the next screen opens in which the search result is displayed in the form of a collection. (search with the method https://unsplash.com/documentation#search-photos)
 
 # Technologies
 
