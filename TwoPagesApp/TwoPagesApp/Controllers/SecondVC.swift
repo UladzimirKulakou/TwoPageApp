@@ -6,26 +6,30 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class SecondVC: UIViewController {
     var searchFromFirstVC: String?
-    
+    var data = [State]()
     var photos: [UnsplashPhoto] = []
     var urlAdresses: [String] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var images = [UIImage]()
+    //var images = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        getData(by: searchFromFirstVC!)
+        guard let requestFromTF = searchFromFirstVC else { return }
+        getData(by: requestFromTF)
         
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - функция вытаскивает из нашей модели нужный нам массив URL
     
     func getData(by search: String) {
         let networkDataFetcher = NetworkDataFetcher()
@@ -42,40 +46,41 @@ class SecondVC: UIViewController {
         }
     }
     
+    // MARK: - Функция которая делает запрос из полученного массива URL  на сервер и получает массив картинок
+    
     func loadImages() {
+        print("Count of URL: \(urlAdresses.count)")
+        data = Array(repeating: .loading, count: urlAdresses.count)
+        //  data = Array(repeating: .loading, count: 30)
+        var x = -1
         for url in urlAdresses {
-            if let data = try? Data(contentsOf: URL(string: url)!),
-               let image = UIImage(data: data) {
-                images.append(image)
+            AF.request(url).responseImage(queue: .global(qos: .utility)) { [unowned self] response in
+                if case .success(let image) = response.result {
+                    DispatchQueue.main.async() { x += 1
+                        self.data[x] = .loaded(image: image)
+                        self.collectionView.reloadData()
+                    }
+                }
             }
+            
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+// MARK: - сздаем ячейки через расширения
 
-extension SecondVC: UICollectionViewDataSource{
+extension SecondVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        images.count
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellImage", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
-        let image = images[indexPath.item]
-        cell.photoView.image = image
-        
-        return cell 
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellImage", for: indexPath) as! ImageCollectionViewCell
+        cell.update(state: data[indexPath.row])
+        return cell
     }
 }
+
+// MARK: - настраиваем размеры ячейки (три в ряду)
 
 extension SecondVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

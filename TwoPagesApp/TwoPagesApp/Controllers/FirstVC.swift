@@ -9,33 +9,26 @@ import UIKit
 
 class FirstVC: UIViewController {
     
-    @IBOutlet weak var searchTF: UITextField!
+    // MARK: - создаем Outlet  для элементов в StackView
     
+    @IBOutlet weak var searchTF: UITextField!
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        // MARK: - закругляем кнопку
+        
         button.layer.cornerRadius = 5
-       
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func buttonAction(_ sender: UIButton) {
-        
-    }
+    // MARK: - Передаем информацию из TextField на второй контроллер, segue не именуем, т.к. у нас тут всего один переход
     
-    @IBAction func searchTFAction(_ sender: UITextField) {
-        
-    }
-    
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! SecondVC
         destination.searchFromFirstVC = searchTF.text
+        searchTF.text = nil
     }
 
 

@@ -10,6 +10,8 @@ import Foundation
 class NetworkDataFetcher {
     var networkService = NetworkService()
     
+    // MARK: - создаем Data Fetcher
+    
     func getImages(searchTerm: String, completion: @escaping (SearchResults?) -> ()) {
         networkService.request(serchTerm: searchTerm) { (data, error) in
             if let error = error {

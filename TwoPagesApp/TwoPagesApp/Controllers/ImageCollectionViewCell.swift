@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Создаем enum для заполнения массива базисного для создания ячеек делаем это именно ток, потому что хотим корректно отобразить индикатор загрузки
 
 enum State {
     case loading
@@ -17,19 +18,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-//    var unsplashPhoto: UnsplashPhoto! {
-//        didSet {
-//            let photoUrl = unsplashPhoto.urls["regular"]
-//            guard let imageUrl = photoUrl, let url = URL(string: imageUrl) else { return }
-//        }
-//    }
     override func awakeFromNib() {
-        super .awakeFromNib()
-        
-        activityIndicator.isHidden = false
+        super.awakeFromNib()
+        self.layer.cornerRadius = 7
+        // Initialization code
     }
-    
     func update(state: State) {
         switch state {
         case .loading:
@@ -40,14 +33,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
         case let .loaded(image: image):
             if activityIndicator.isAnimating {
                 activityIndicator.stopAnimating()
-                activityIndicator.isHidden = true
             }
             photoView.image = image
         }
     }
-    
-    
-    
-    
-    
 }

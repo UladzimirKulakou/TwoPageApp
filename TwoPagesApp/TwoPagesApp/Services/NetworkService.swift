@@ -8,6 +8,8 @@
 import Foundation
 
 class NetworkService {
+    
+    // MARK: - запрос на сервер
 
     func request(serchTerm: String, completion: @escaping (Data?, Error?) -> Void) {
         let parameters = self.prepareParam(searchTerm: serchTerm)
@@ -19,12 +21,16 @@ class NetworkService {
         task.resume()
 
     }
+    
+    // MARK: - Header нашего запроса, здесь важен ключ авторизации - берем его с сервера unsplash после регистрации на нем нашего приложения
 
     private func prepareHeader() -> [String: String]? {
         var headers = [String: String]()
         headers["Authorization"] = "Client-ID 6W1qFOppgdY7o5fJssjkSzFnlz1kWdYgwJlQnaaFB6w"
         return headers
     }
+    
+    // MARK: - параметры запроса
 
     private func prepareParam(searchTerm: String?) -> [String: String] {
         var parametrs = [String: String]()
@@ -35,6 +41,8 @@ class NetworkService {
         return parametrs
     }
 
+    // MARK: - собираем url
+    
     private func url(params: [String: String]) -> URL {
         var components = URLComponents()
         components.scheme = "https"

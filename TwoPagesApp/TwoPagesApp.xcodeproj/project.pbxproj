@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A16C03B26FB8C690063D4F7 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0A16C03A26FB8C690063D4F7 /* AlamofireImage */; };
 		0A74FA3D26F92CE1001DC033 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74FA3C26F92CE1001DC033 /* SecondVC.swift */; };
 		0A74FA3F26F93038001DC033 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74FA3E26F93038001DC033 /* ImageCollectionViewCell.swift */; };
 		0AAF2E2926F78A4600DA495B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF2E2826F78A4600DA495B /* AppDelegate.swift */; };
@@ -14,7 +15,6 @@
 		0AAF2E3026F78A4600DA495B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF2E2E26F78A4600DA495B /* Main.storyboard */; };
 		0AAF2E3226F78A4700DA495B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF2E3126F78A4700DA495B /* Assets.xcassets */; };
 		0AAF2E3526F78A4700DA495B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF2E3326F78A4700DA495B /* LaunchScreen.storyboard */; };
-		0AAF2E3D26F7944300DA495B /* SecondCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF2E3C26F7944300DA495B /* SecondCollectionVC.swift */; };
 		0AAF2E3F26F794B000DA495B /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF2E3E26F794B000DA495B /* FirstVC.swift */; };
 		0AAF2E4426F7AB0E00DA495B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF2E4326F7AB0E00DA495B /* NetworkService.swift */; };
 		0AAF2E4726F7D3E000DA495B /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF2E4626F7D3E000DA495B /* NetworkDataFetcher.swift */; };
@@ -31,7 +31,6 @@
 		0AAF2E3126F78A4700DA495B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AAF2E3426F78A4700DA495B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AAF2E3626F78A4700DA495B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AAF2E3C26F7944300DA495B /* SecondCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionVC.swift; sourceTree = "<group>"; };
 		0AAF2E3E26F794B000DA495B /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		0AAF2E4326F7AB0E00DA495B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0AAF2E4626F7D3E000DA495B /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A16C03B26FB8C690063D4F7 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +68,12 @@
 		0AAF2E2726F78A4600DA495B /* TwoPagesApp */ = {
 			isa = PBXGroup;
 			children = (
-				0AAF2E4226F794FC00DA495B /* Sources */,
+				0AAF2E4A26F7D46C00DA495B /* Models */,
 				0AAF2E4026F794D000DA495B /* View */,
-				0AAF2E3626F78A4700DA495B /* Info.plist */,
 				0AAF2E4126F794E900DA495B /* Controllers */,
 				0AAF2E4526F7D3C000DA495B /* Services */,
-				0AAF2E4A26F7D46C00DA495B /* Models */,
+				0AAF2E4226F794FC00DA495B /* Sources */,
+				0AAF2E3626F78A4700DA495B /* Info.plist */,
 			);
 			path = TwoPagesApp;
 			sourceTree = "<group>";
@@ -90,7 +90,6 @@
 		0AAF2E4126F794E900DA495B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0AAF2E3C26F7944300DA495B /* SecondCollectionVC.swift */,
 				0AAF2E3E26F794B000DA495B /* FirstVC.swift */,
 				0A74FA3C26F92CE1001DC033 /* SecondVC.swift */,
 				0A74FA3E26F93038001DC033 /* ImageCollectionViewCell.swift */,
@@ -141,6 +140,9 @@
 			dependencies = (
 			);
 			name = TwoPagesApp;
+			packageProductDependencies = (
+				0A16C03A26FB8C690063D4F7 /* AlamofireImage */,
+			);
 			productName = TwoPagesApp;
 			productReference = 0AAF2E2526F78A4600DA495B /* TwoPagesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +170,9 @@
 				Base,
 			);
 			mainGroup = 0AAF2E1C26F78A4600DA495B;
+			packageReferences = (
+				0A16C03926FB8C690063D4F7 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 0AAF2E2626F78A4600DA495B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,7 +202,6 @@
 			files = (
 				0AAF2E4726F7D3E000DA495B /* NetworkDataFetcher.swift in Sources */,
 				0AAF2E4426F7AB0E00DA495B /* NetworkService.swift in Sources */,
-				0AAF2E3D26F7944300DA495B /* SecondCollectionVC.swift in Sources */,
 				0AAF2E3F26F794B000DA495B /* FirstVC.swift in Sources */,
 				0AAF2E4926F7D46500DA495B /* SearchResults.swift in Sources */,
 				0AAF2E2926F78A4600DA495B /* AppDelegate.swift in Sources */,
@@ -405,6 +409,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A16C03926FB8C690063D4F7 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A16C03A26FB8C690063D4F7 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A16C03926FB8C690063D4F7 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0AAF2E1D26F78A4600DA495B /* Project object */;
 }
