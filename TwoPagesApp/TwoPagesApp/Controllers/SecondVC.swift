@@ -52,13 +52,14 @@ class SecondVC: UIViewController {
         print("Count of URL: \(urlAdresses.count)")
         data = Array(repeating: .loading, count: urlAdresses.count)
         //  data = Array(repeating: .loading, count: 30)
-        var x = -1
+        var index = 0
         for url in urlAdresses {
             AF.request(url).responseImage(queue: .global(qos: .utility)) { [unowned self] response in
                 if case .success(let image) = response.result {
-                    DispatchQueue.main.async() { x += 1
-                        self.data[x] = .loaded(image: image)
+                    DispatchQueue.main.async() {
+                        self.data[index] = .loaded(image: image)
                         self.collectionView.reloadData()
+                        index += 1
                     }
                 }
             }
